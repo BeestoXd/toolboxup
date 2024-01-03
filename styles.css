@@ -350,27 +350,29 @@ span {
 /* BREAKPOINTS */
 
 @media (max-width: 1200px) {
-    .home-img img {
-        width: 90vw;
+    html {
+        font-size: 55%;
     }
 }
 
 @media (max-width: 991px) {
-    .footer {
+    .header {
         padding: 2rem 3%;
     }
     section {
         padding: 10rem 3% 2rem;
     }
-    .home {
-        padding: 0 3%;
+    .services {
+        padding-bottom: 7rem;
+    }
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+    .contact {
+        min-height: auto;
     }
     .footer {
-        flex-direction: column-reverse;
-    }
-    .footer p {
-        text-align: center;
-        margin-top: 2rem;
+        padding: 2rem 3%;
     }
 }
 
@@ -396,6 +398,7 @@ span {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        color: var(--text-color);
     }
     .home {
         flex-direction: column;
