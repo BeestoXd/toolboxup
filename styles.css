@@ -368,9 +368,6 @@ span {
     .portfolio {
         padding-bottom: 7rem;
     }
-    .contact {
-        min-height: auto;
-    }
     .footer {
         padding: 2rem 3%;
     }
@@ -378,7 +375,7 @@ span {
 
 @media (max-width: 768px) {
     #menu-icon {
-        margin: 10px;
+        display: block;
     }
     .navbar {
         position: absolute;
@@ -426,9 +423,12 @@ span {
     .portfolio h2 {
         margin-bottom: 3rem;
     }
-    .portfolio-image {
-        max-width: 100%;
-        height: auto;
+    .portfolio-box img {
+        width: 100%;
+    }
+    .portfolio-box {
+        height: 35rem;
+        width: 70vw;
     }
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
@@ -454,6 +454,7 @@ span {
     }
     .footer {
         flex-direction: column-reverse;
+        gap: 2rem;
     }
     .footer p {
         text-align: center;
