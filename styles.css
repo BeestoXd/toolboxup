@@ -440,16 +440,14 @@ span {
 }
 
 @media (max-width: 365px) {
-    .home-img img {
-        width: 90vw;
-    }
+    .home-img img,
     .about img {
         width: 90vw;
     }
     .footer {
         flex-direction: column-reverse;
     }
-    .footer-text p {
+    .footer p {
         text-align: center;
         margin-top: 2rem;
     }
