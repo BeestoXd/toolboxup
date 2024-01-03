@@ -378,7 +378,7 @@ span {
 
 @media (max-width: 768px) {
     #menu-icon {
-        display: block;
+        margin: 10px;
     }
     .navbar {
         position: absolute;
@@ -425,6 +425,10 @@ span {
     }
     .portfolio h2 {
         margin-bottom: 3rem;
+    }
+    .portfolio-image {
+        max-width: 100%;
+        height: auto;
     }
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
