@@ -427,8 +427,9 @@ span {
         width: 100%;
     }
     .portfolio-box {
-        height: 35rem;
-        width: 70vw;
+        height: auto;
+        width: 100%;
+        margin-bottom: 7rem;
     }
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
