@@ -423,13 +423,15 @@ span {
     .portfolio h2 {
         margin-bottom: 3rem;
     }
-    .portfolio-box img {
-        width: 100%;
-    }
     .portfolio-box {
-        height: auto;
+        position: relative;
+        border-radius: 2rem;
+        box-shadow: 0 0 1rem var(--bg-color);
+        overflow: hidden;
+        max-width: 100%;
         width: 100%;
-        margin-bottom: 7rem;
+        min-width: 500px;
+        /* Ganti nilai ini sesuai kebutuhan */
     }
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
