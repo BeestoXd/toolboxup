@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, set, get } from 'firebase/database';
+
 // Initialize Firebase with your project config
 const firebaseConfig = {
   apiKey: "AIzaSyDgruYqzjGgltADVdkXKkJkV0DygdNjQzw",
