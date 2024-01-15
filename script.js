@@ -1,6 +1,19 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, set, get } from 'firebase/database';
 
+/*============================= toggle icon navbar =============================*/
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
+
+/*============================= scroll sections active link =============================*/
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+
 // Initialize Firebase with your project config
 const firebaseConfig = {
   apiKey: "AIzaSyDgruYqzjGgltADVdkXKkJkV0DygdNjQzw",
@@ -45,19 +58,6 @@ window.onload = function () {
     setInterval(updateCounter, 20000);
   });
 };
-
-/*============================= toggle icon navbar =============================*/
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
-
-/*============================= scroll sections active link =============================*/
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
     sections.forEach(sec => {
