@@ -43,7 +43,7 @@
             <div class="social-media">
                 <a href="https://discord.gg/dGkyyf326k"><i class='bx bxl-discord-alt'></i></a>
             </div>
-            <a href="https://github.com/BeestoXd/Toolbox-UP/releases/download/toolboxup/ToolboxUP_5.4.57.apk" class="btn">Download Latest Version</a>
+            <a href="https://github.com/BeestoXd/Toolbox-UP/releases/download/toolboxup/ToolboxUP_5.4.57.apk" class="btn" onclick="links">Download Latest Version</a>
         </div>
 
         <div class="home-img">
@@ -123,6 +123,18 @@
 
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+function links {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/mysite.com/awesomeclick");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        alert(`This button has been clicked ${this.response.value} times!`);
+    }
+    xhr.send();
+}
+</script>
 
     <!-- typed js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
