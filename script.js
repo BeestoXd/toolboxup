@@ -1,51 +1,3 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, get } from 'firebase/database';
-
-// Initialize Firebase with your project config
-const firebaseConfig = {
-  apiKey: "AIzaSyDgruYqzjGgltADVdkXKkJkV0DygdNjQzw",
-  authDomain: "toolbox-up-web.firebaseapp.com",
-  projectId: "toolbox-up-web",
-  storageBucket: "toolbox-up-web.appspot.com",
-  messagingSenderId: "1060266418920",
-  appId: "1:1060266418920:web:def310ce874da1b678df5d"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Get a reference to the database
-const database = firebase.database();
-
-// Initialize the counter variable
-let visitCounter = 0;
-
-// Function to update and display the counter
-function updateCounter() {
-  visitCounter++;
-  document.getElementById('visitCounter').textContent = visitCounter;
-
-  // Update the counter value in Firebase Realtime Database
-  database.ref('visitCounter').set(visitCounter);
-}
-
-// Call the updateCounter function when the page is loaded
-window.onload = function () {
-  // Retrieve the counter value from Firebase Realtime Database
-  database.ref('visitCounter').once('value', (snapshot) => {
-    const storedCounter = snapshot.val();
-
-    if (storedCounter !== null) {
-      // If the counter value is present in the database, use it
-      visitCounter = storedCounter;
-    }
-
-    updateCounter();
-
-    // Set interval to update the counter every 5 seconds (adjust as needed)
-    setInterval(updateCounter, 20000);
-  });
-};
-
 /*============================= toggle icon navbar =============================*/
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
@@ -58,6 +10,34 @@ menuIcon.onclick = () => {
 /*============================= scroll sections active link =============================*/
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
+
+// Initialize the counter variable
+let visitCounter = 0;
+
+// Function to update and display the counter
+function updateCounter() {
+    visitCounter++;
+    document.getElementById('visitCounter').textContent = visitCounter;
+    // Save the counter value to local storage
+    localStorage.setItem('visitCounter', visitCounter);
+}
+
+// Call the updateCounter function when the page is loaded
+window.onload = function () {
+    // Retrieve the counter value from local storage
+    const storedCounter = localStorage.getItem('visitCounter');
+    if (storedCounter) {
+        // If the counter value is present in local storage, use it
+        visitCounter = parseInt(storedCounter);
+    } else {
+        // If the counter value is not present, initialize it to 0
+        visitCounter = 0;
+    }
+    updateCounter();
+    
+    // Set interval to update the counter every 5 seconds (adjust as needed)
+    setInterval(updateCounter, 20000);
+};
 
 window.onscroll = () => {
     sections.forEach(sec => {
